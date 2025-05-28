@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Validador de Número Negativo</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 50px;
+        text-align: center;
+      }
+      input {
+        padding: 10px;
+        font-size: 16px;
+        width: 200px;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        margin-left: 10px;
+        cursor: pointer;
+      }
+      #mensagem {
+        margin-top: 20px;
+        font-weight: bold;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Validação de Número Negativo</h1>
+
+    <input type="text" id="valorInput" placeholder="Digite um valor negativo" />
+    <button onclick="validarNegativo()">Validar</button>
+
+    <div id="mensagem"></div>
+
+    <script>
+      function validarNegativo() {
+        const valor = document.getElementById("valorInput").value;
+        const numero = parseFloat(valor);
+        const mensagem = document.getElementById("mensagem");
+
+        if (!isNaN(numero) && numero < 0) {
+          mensagem.textContent = "válido";
+          mensagem.style.color = "green";
+        } else {
+          mensagem.textContent = "inválido";
+          mensagem.style.color = "red";
+        }
+      }
+    </script>
+  </body>
+</html>

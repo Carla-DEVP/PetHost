@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Café Interativo</title>
+    <style>
+      body {
+        text-align: center;
+        font-family: Arial, sans-serif;
+        margin-top: 50px;
+      }
+      img {
+        width: 300px;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+      button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hora do Café</h1>
+
+    <img
+      id="imagemCafe"
+      src="https://i.pinimg.com/736x/c7/5f/13/c75f13593f98dd8220b330b377806247.jpg"
+      alt="Imagem de café"
+    />
+
+    <br />
+    <button onclick="mudaFigura()">Trocar Imagem</button>
+
+    <script>
+      function mudaFigura() {
+        const img = document.getElementById("imagemCafe");
+        if (img.src.includes("Café+1")) {
+          img.src =
+            "https://i.pinimg.com/736x/c7/5f/13/c75f13593f98dd8220b330b377806247.jpg";
+        } else {
+          img.src =
+            "https://i.pinimg.com/736x/57/c0/33/57c03354563700fa3a9cb596c5d6d204.jpg";
+        }
+      }
+    </script>
+  </body>
+</html>

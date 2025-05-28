@@ -1,0 +1,26 @@
+.campo-senha {
+  position: relative;
+  width: 100%;
+  max-width: 300px; /* controla a largura do campo */
+}
+
+.campo-senha input {
+  width: 100%;
+  padding: 10px 40px 10px 10px; /* espaço pro olhinho na direita */
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.olho {
+  position: absolute;
+  right: 10px; /* encosta o emoji na borda interna do input */
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+  color: #333;
+  line-height: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
