@@ -2,7 +2,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: Helvetica;
+  font-family: Helvetica, Arial, sans-serif; /* Adicionado Arial como fallback */
   box-sizing: border-box;
 }
 
@@ -14,6 +14,7 @@ h3 {
 
 p {
   color: #70747a;
+  line-height: 1.6; /* Melhorando a legibilidade */
 }
 
 /* Navbar */
@@ -22,24 +23,32 @@ p {
   height: 80px;
   background-color: #232a31;
   padding: 0 2rem;
+  position: fixed; /* Para manter a navbar no topo ao rolar */
+  top: 0;
+  left: 0;
+  z-index: 100; /* Para garantir que fique acima de outros conteúdos */
 }
 
 nav {
   position: relative;
+  height: 100%; /* Para alinhar itens verticalmente */
+  display: flex; /* Para alinhar logo e itens */
+  align-items: center; /* Para alinhar logo e itens */
 }
 
 .logo {
   width: 50px;
-  margin-top: 15px;
+  /* margin-top: 15px; Removido, pois o flex alignment cuida disso */
 }
 
 .navbar-items {
-  position: absolute;
-  right: 0;
-  height: 80px;
-  line-height: 80px;
+  /* position: absolute; Removido para usar flexbox */
+  /* right: 0; Removido */
+  /* height: 80px; Removido */
+  /* line-height: 80px; Removido */
   margin: 0;
-  display: inline-block;
+  display: inline-block; /* Mantido, mas o pai 'nav' é flex */
+  margin-left: auto; /* Empurra os itens para a direita */
 }
 
 .navbar-items li {
@@ -51,7 +60,7 @@ nav {
 .navbar-items a {
   color: #fff;
   text-decoration: none;
-  transition: 0.5s;
+  transition: 0.3s; /* Ajustado para uma transição mais sutil */
 }
 
 .navbar-items a:hover {
@@ -59,34 +68,37 @@ nav {
 }
 
 .default-btn {
-  padding: 15px 20px;
+  padding: 10px 15px; /* Ajustado padding */
   background-color: #2cc76a;
   border-radius: 5px;
+  transition: background-color 0.3s; /* Transição para o botão */
 }
 
 .navbar-items .default-btn:hover {
   background-color: #22bb5f;
-  color: #fff;
+  color: #fff; /* Mantido por redundância, mas já é a cor do link */
 }
 
 /* main banner */
 .main-banner {
-  background-image: url("../img/mainbanner.png");
+  background-image: url("../img/teste1.png"); /* Caminho corrigido */
   background-size: cover;
   background-position: center;
   padding: 10rem 0;
+  text-align: center; /* Centraliza o conteúdo do banner */
+  margin-top: 80px; /* Para compensar a navbar fixa */
 }
 
 .main-banner h1,
 .main-banner p {
   color: #fff;
-  text-align: center;
   font-weight: bold;
-  text-shadow: #000 3px 2px 3px;
+  text-shadow: #000 2px 2px 4px; /* Ajustado text-shadow */
 }
 
 .main-banner h1 {
   font-size: 54px;
+  margin-bottom: 0.5em; /* Espaçamento abaixo do H1 */
 }
 
 .main-banner p {
@@ -95,23 +107,31 @@ nav {
 
 /* services */
 .services-container {
-  padding: 5rem 0;
+  padding: 5rem 2rem; /* Adicionado padding lateral */
+  text-align: center; /* Centraliza o título da seção se houver */
 }
 
 .services-container ul {
   display: flex;
+  flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+  justify-content: center; /* Centraliza os itens */
   width: 90%;
   margin: 0 auto;
+  padding: 0; /* Removido padding padrão de ul */
 }
 
 .services-container li {
-  flex: 1 1 200px;
+  flex: 1 1 300px; /* Ajustado flex-basis para melhor responsividade */
+  max-width: 350px; /* Largura máxima por item */
   list-style: none;
   text-align: center;
   padding: 20px;
+  margin: 10px; /* Espaçamento entre os cards */
+  /* box-shadow: 0 2px 5px rgba(0,0,0,0.1); Adicionar uma sombra sutil se desejar */
 }
 
 .fas {
+  /* Ícones Font Awesome */
   font-size: 60px;
   margin-bottom: 15px;
 }
@@ -136,85 +156,30 @@ nav {
   line-height: 24px;
 }
 
-/* prices and plans */
-.pricing-container {
-  padding-bottom: 5rem;
+/* Sustainability Section */
+.sustainability-container {
+  padding: 4rem 2rem; /* Adicionado padding lateral */
   text-align: center;
+  background-color: #f9f9f9; /* Cor de fundo suave para diferenciar */
 }
 
-.pricing-container h2 {
+.sustainability-container h2 {
   font-size: 36px;
+  margin-bottom: 20px;
 }
 
-.pricing-container p {
-  font-size: 20px;
-}
-
-.plans-container {
-  display: flex;
-  justify-content: space-between;
-  width: 90%;
-  margin: 50px auto 0;
-}
-
-.plan {
-  flex: 1;
-  max-width: 275px;
-  margin: 0 20px;
-}
-
-.plan ul {
-  padding: 0;
-}
-
-.plan li {
-  list-style: none;
-  height: 50px;
-  line-height: 50px;
-  background-color: #e8e9ea;
-  color: #333;
-}
-
-.plan .price {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background-color: #2cc762;
-  color: #fff;
-  text-align: center;
-  line-height: 120px;
-  margin: 0 auto -50px;
-  font-size: 18px;
-  position: relative;
-}
-
-.plan .plan-name {
-  text-transform: uppercase;
-  font-size: 20px;
-  font-weight: bold;
-  color: #fff;
-  background-color: #202b34;
-  padding: 50px 0;
-}
-
-.plan .plan-btn {
-  background-color: #2cc762;
-  color: #fff;
-  font-size: 24px;
-  height: 75px;
-  line-height: 75px;
-  cursor: pointer;
-}
-
-.plan .recommended {
-  background-color: #f45c57;
+.sustainability-container p {
+  font-size: 18px; /* Ajustado tamanho da fonte */
+  max-width: 800px; /* Limita a largura do parágrafo para melhor leitura */
+  margin: 0 auto; /* Centraliza o parágrafo */
+  color: #555; /* Cor do texto um pouco mais escura */
 }
 
 /* search domain */
 .searchdomain-container {
   background-color: #34454e;
   text-align: center;
-  padding: 5rem 0;
+  padding: 5rem 2rem; /* Adicionado padding lateral */
 }
 
 .searchdomain-container h2 {
@@ -229,15 +194,21 @@ nav {
   margin-bottom: 25px;
 }
 
+.searchdomain-container form {
+  /* Para centralizar o form */
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 .searchdomain-container input {
   display: block;
   border: none;
   border-radius: 5px;
-  margin: 0 auto;
+  margin: 0 auto; /* Centraliza os inputs individualmente se o form não tiver max-width */
 }
 
 .searchdomain-container input[type="text"] {
-  width: 60%;
+  width: 100%; /* Ocupa a largura do container do form */
   padding: 20px;
   font-size: 20px;
   margin-bottom: 25px;
@@ -249,7 +220,8 @@ nav {
   color: #fff;
   font-size: 24px;
   cursor: pointer;
-  opacity: 0.8;
+  opacity: 0.9; /* Ajustado para melhor visibilidade inicial */
+  transition: opacity 0.3s; /* Transição para o hover */
 }
 
 .searchdomain-container input[type="submit"]:hover {
@@ -259,7 +231,7 @@ nav {
 /* contact form */
 .contact-container {
   text-align: center;
-  padding: 5rem 0 2rem 0;
+  padding: 5rem 2rem 2rem 2rem; /* Adicionado padding lateral */
 }
 
 .contact-container h2 {
@@ -272,59 +244,82 @@ nav {
   margin-bottom: 40px;
 }
 
+.contact-container form {
+  /* Para centralizar o form */
+  max-width: 500px;
+  margin: 0 auto;
+}
+
 .contact-container input,
 .contact-container textarea {
-  width: 200px;
+  width: 100%; /* Ocupa a largura do container do form */
   padding: 10px 20px;
   font-size: 16px;
   border-radius: 5px;
   border: 1px solid #ccc;
-  margin: 0 10px 20px;
+  margin: 0 0 20px 0; /* Ajustado margin para vertical */
 }
 
 .contact-container textarea {
-  display: block;
-  margin: 0 auto 20px;
-  width: 470px;
+  /* display: block; Removido, width 100% já faz ser block-like */
+  /* margin: 0 auto 20px; Removido, form controla centralização */
+  /* width: 470px; Alterado para 100% */
   height: 150px;
 }
 
 .contact-container input[type="submit"] {
-  display: block;
-  margin: 0 auto;
+  /* display: block; Removido */
+  /* margin: 0 auto; Removido */
   background-color: #2cc76a;
   color: #fff;
   cursor: pointer;
+  transition: background-color 0.3s; /* Transição para o hover */
+}
+
+.contact-container input[type="submit"]:hover {
+  background-color: #22bb5f;
 }
 
 /* footer */
 footer {
   text-align: center;
   font-weight: bold;
-  margin: 50px 0 100px;
+  margin: 50px 0; /* Reduzido margin bottom */
+  padding-bottom: 50px; /* Adicionado padding para espaço no final */
 }
 
 /* responsividade */
 
 /* small laptops a partir de 1100px */
 @media (max-width: 1100px) {
-  .plans-container {
+  .services-container ul {
     width: 95%;
   }
-
-  .plan {
-    margin: 0 5px;
-  }
+  /* Não havia regras para .plan aqui, então nada a remover referente a isso */
 }
 
 /* tablet 900px */
 @media (max-width: 900px) {
+  .main-banner {
+    padding-top: 8rem; /* Ajuste para navbar fixa */
+    padding-bottom: 8rem;
+  }
+  .main-banner h1 {
+    font-size: 48px;
+  }
   .main-banner p {
-    padding: 0 6rem;
+    font-size: 28px;
+    padding: 0 4rem; /* Ajustado padding */
   }
 
   .searchdomain-container {
-    padding: 2rem 4rem;
+    padding: 3rem 2rem; /* Ajustado padding */
+  }
+  .searchdomain-container h2 {
+    font-size: 36px;
+  }
+  .searchdomain-container p {
+    font-size: 20px;
   }
 }
 
@@ -332,49 +327,83 @@ footer {
 @media (max-width: 576px) {
   html,
   body {
-    overflow-x: hidden;
+    overflow-x: hidden; /* Cuidado com isso, pode esconder conteúdo necessário */
+  }
+
+  .navbar-container {
+    padding: 0 1rem; /* Reduz padding para telas menores */
+  }
+
+  .navbar-items {
+    /* Para um menu hambúrguer, seria uma lógica diferente aqui */
   }
 
   .navbar-items li {
-    font-size: 12px;
-    margin-left: 10px;
+    font-size: 11px; /* Reduzido um pouco */
+    margin-left: 8px; /* Reduzido margin */
+  }
+  .default-btn {
+    padding: 8px 10px;
   }
 
+  .main-banner {
+    padding-top: 6rem; /* Ajuste para navbar fixa e tela menor */
+    padding-bottom: 6rem;
+  }
+  .main-banner h1 {
+    font-size: 36px;
+  }
   .main-banner p {
-    padding: 0 2rem;
+    font-size: 20px;
+    padding: 0 1rem; /* Ajustado padding */
   }
 
   .services-container ul {
     flex-direction: column;
+    width: 100%;
+    padding: 0 1rem; /* Ajustado padding */
+  }
+  .services-container li {
+    margin-left: 0;
+    margin-right: 0;
   }
 
-  .plans-container {
-    flex-direction: column;
-    width: 100%;
-    padding: 0 2rem;
+  .sustainability-container {
+    padding: 3rem 1rem;
   }
-
-  .plan {
-    width: 100%;
-    max-width: 100%;
-    margin-bottom: 15px;
+  .sustainability-container h2 {
+    font-size: 28px;
+  }
+  .sustainability-container p {
+    font-size: 16px;
   }
 
   .searchdomain-container h2 {
     font-size: 28px;
   }
-
   .searchdomain-container input[type="text"] {
     width: 100%;
+    font-size: 16px;
+    padding: 15px;
+  }
+  .searchdomain-container input[type="submit"] {
+    font-size: 18px;
+    padding: 12px 20px;
   }
 
   .contact-container {
-    padding: 3rem 2rem;
+    padding: 3rem 1rem; /* Ajustado padding */
   }
-
+  .contact-container h2 {
+    font-size: 28px;
+  }
+  .contact-container p {
+    font-size: 16px;
+  }
   .contact-container input,
   .contact-container textarea {
     width: 100%;
     margin: 10px 0;
+    font-size: 14px;
   }
 }
