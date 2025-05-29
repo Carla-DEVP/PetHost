@@ -37,10 +37,7 @@
         </nav>
       </div>
       <main>
-        <div class="main-banner">
-          <h1>PetHost</h1>
-          <p>Rede colaborativa de hospedagem para pets</p>
-        </div>
+        <div class="main-banner"></div>
         <section class="services-container">
           <ul>
             <li>
@@ -103,10 +100,9 @@
             projeto ativo e em constante evolução, contamos com o apoio de
             parceiros comerciais do segmento pet da cidade de João Pessoa, que
             podem divulgar seus serviços em espaços publicitários dedicados em
-            nosso site. [cite: 30] Essa estratégia mantém a essência
-            colaborativa do projeto, ao mesmo tempo que viabiliza sua
-            sustentabilidade econômica, promovendo sua continuidade e futura
-            expansão. [cite: 30, 31]
+            nosso site. Essa estratégia mantém a essência colaborativa do
+            projeto, ao mesmo tempo que viabiliza sua sustentabilidade
+            econômica, promovendo sua continuidade e futura expansão.
           </p>
         </section>
         <section class="searchdomain-container">
@@ -118,8 +114,9 @@
               name="domain"
               id="domain"
               placeholder="Digite o bairro desejado"
+              class="form-input"
             />
-            <input type="submit" value="Procurar bairro" />
+            <input type="submit" value="Procurar bairro" class="form-btn" />
           </form>
         </section>
         <section class="contact-container">
@@ -128,19 +125,27 @@
             Envie a sua mensagem, em até 4 horas um anfitrião entrará em contato
           </p>
           <form>
-            <input type="text" name="name" id="name" placeholder="Seu nome" />
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Seu nome"
+              class="form-input"
+            />
             <input
               type="email"
               name="email"
               id="email"
               placeholder="Seu e-mail"
+              class="form-input"
             />
             <textarea
               name="message"
               id="message"
               placeholder="Descreva um pouco seu Pet, necessidades e como melhor para acomodá-lo..."
+              class="form-textarea"
             ></textarea>
-            <input type="submit" value="Enviar" />
+            <input type="submit" value="Enviar" class="form-btn" />
           </form>
         </section>
       </main>
