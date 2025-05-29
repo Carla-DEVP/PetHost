@@ -3,23 +3,23 @@
   margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; /* Pilha de fontes de sistema aprimorada */
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   box-sizing: border-box;
 }
 
 body {
-  color: #333; /* Cor de texto padrão para o corpo */
+  color: #333;
 }
 
-h1, /* Será aplicado ao H1 do logo, se ele for texto, ou a outros H1s */
+h1,
 h2,
 h3 {
-  color: #333; /* Mantido */
+  color: #333;
 }
 
 p {
-  color: #555; /* Escurecido um pouco para melhor contraste que o #70747a */
-  line-height: 1.65; /* Leve ajuste para espaçamento entre linhas */
+  color: #555;
+  line-height: 1.65;
 }
 
 /* Navbar */
@@ -31,8 +31,8 @@ p {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000; /* Aumentado z-index por precaução */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil na navbar */
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 nav {
@@ -40,13 +40,13 @@ nav {
   height: 100%;
   display: flex;
   align-items: center;
-  max-width: 1200px; /* Limita largura da navbar em telas grandes */
-  margin: 0 auto; /* Centraliza o conteúdo da navbar */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .logo {
-  width: 50px; /* Ajuste conforme o tamanho real do seu logo1.png */
-  height: auto; /* Garante proporção */
+  width: 50px;
+  height: auto;
 }
 
 .navbar-items {
@@ -59,7 +59,7 @@ nav {
   display: inline-block;
   text-transform: uppercase;
   margin-left: 25px;
-  font-weight: 500; /* Leve negrito nos itens do menu */
+  font-weight: 500;
 }
 
 .navbar-items a {
@@ -69,27 +69,27 @@ nav {
 }
 
 .navbar-items a:hover {
-  color: #2cc76a; /* Cor de destaque no hover */
+  color: #2cc76a;
 }
 
 .default-btn {
-  padding: 10px 20px; /* Aumentado um pouco o padding */
+  padding: 10px 20px;
   background-color: #2cc76a;
   border-radius: 5px;
-  color: #fff; /* Garantindo cor do texto */
-  text-decoration: none; /* Removendo sublinhado se for link */
+  color: #fff;
+  text-decoration: none;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .default-btn:hover {
   background-color: #22bb5f;
   color: #fff;
-  transform: translateY(-2px); /* Efeito sutil de levantar */
+  transform: translateY(-2px);
 }
 
 /* main banner */
 .main-banner {
-  background-image: url("../img/teste1.png"); /* CORRIGIDO PARA .png CONFORME SUA ÚLTIMA INSTRUÇÃO */
+  background-image: url("../img/teste1.png"); /* Confirmado teste1.png */
   background-size: cover;
   background-position: top center;
   padding: 12rem 0;
@@ -109,76 +109,108 @@ nav {
 }
 
 .services-container h2 {
-  /* Adicionando um título para a seção, se desejado no HTML */
   margin-bottom: 3rem;
   font-size: 2.5rem;
 }
 
 .services-container ul {
+  /* A lista principal de cards */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px; /* Espaçamento entre os cards usando gap */
+  gap: 30px;
   width: 90%;
-  max-width: 1200px; /* Limita largura máxima da seção de cards */
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0;
 }
 
-.services-container li {
+.services-container > ul > li {
+  /* Estilo para os cards <li> diretos de .services-container > ul */
   flex: 1 1 300px;
-  max-width: 350px;
+  max-width: 380px; /* Aumentei um pouco para acomodar mais texto */
   list-style: none;
   text-align: center;
-  padding: 30px 25px; /* Ajustado padding interno dos cards */
-  margin: 0; /* Removido, pois 'gap' cuida do espaçamento */
-  background-color: #fff; /* Fundo branco para os cards */
-  border: 1px solid #e0e0e0; /* Borda sutil */
-  border-radius: 8px; /* Bordas arredondadas */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra mais elaborada */
+  padding: 30px 25px;
+  margin: 0;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.services-container li:hover {
+.services-container > ul > li:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
-.fas {
-  font-size: 50px; /* Reduzido um pouco o ícone */
-  margin-bottom: 20px; /* Aumentado espaço abaixo do ícone */
+/* Estilos para as listas de tópicos DENTRO dos cards de serviço */
+.service-points {
+  margin-top: 15px; /* Espaço entre o parágrafo introdutório e a lista de tópicos */
+  margin-bottom: 15px; /* Espaço após a lista de tópicos, antes de um possível parágrafo final */
+  padding-left: 0; /* Remove padding padrão da ul se necessário, ou ajuste */
+  list-style-position: outside; /* Para que os marcadores fiquem fora do bloco de texto */
+  text-align: left; /* Alinha o texto dos tópicos à esquerda */
 }
 
+.service-points li {
+  padding: 5px 0; /* Espaçamento vertical entre os itens da lista */
+  font-size: 0.9rem; /* Tamanho da fonte para os tópicos */
+  line-height: 1.5;
+  /* Reset de estilos que podem ser herdados do card principal */
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+  margin: 0;
+  max-width: none;
+  flex-basis: auto;
+  text-align: left; /* Garante alinhamento à esquerda */
+  /* Adiciona um marcador personalizado ou mantém o padrão */
+}
+
+.services-container > ul > li .fas {
+  /* Ícones dentro dos cards */
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+/* Cores dos ícones (mantendo as cores para os novos ícones) */
 .fa-shield-alt {
+  /* Segurança */
   color: #2cc76a;
 }
 
-.fa-rocket {
-  color: #ef3f29;
+.fa-list-check {
+  /* Diretrizes (antigo fa-rocket) */
+  color: #ef3f29; /* Mantendo a cor do ícone anterior para consistência visual */
 }
 
-.fa-comments {
-  color: #ef8f29;
+.fa-question-circle {
+  /* Ajuda e Suporte (antigo fa-comments) */
+  color: #ef8f29; /* Mantendo a cor do ícone anterior */
 }
 
-.services-container h3 {
-  margin-bottom: 15px; /* Reduzido espaço abaixo do h3 */
+.services-container > ul > li h3 {
+  margin-bottom: 15px;
   font-size: 1.5rem;
 }
 
-.services-container p {
-  font-size: 0.95rem; /* Leve ajuste no tamanho da fonte do parágrafo */
+.services-container > ul > li p {
+  /* Parágrafos dentro dos cards */
+  font-size: 0.95rem;
+  text-align: left; /* Alinhamento justificado ou à esquerda para melhor leitura */
 }
 
 /* Sustainability Section */
 .sustainability-container {
   padding: 4rem 2rem;
   text-align: center;
-  background-color: #f8f9fa; /* Cor de fundo levemente diferente */
+  background-color: #f8f9fa;
 }
 
 .sustainability-container h2 {
-  font-size: 2.2rem; /* Ajustado tamanho */
+  font-size: 2.2rem;
   margin-bottom: 25px;
 }
 
@@ -186,18 +218,18 @@ nav {
   font-size: 1.1rem;
   max-width: 800px;
   margin: 0 auto;
-  color: #495057; /* Cor do texto */
+  color: #495057;
 }
 
 /* searchdomain-container & contact-container forms */
 .form-input,
 .form-textarea {
   width: 100%;
-  padding: 12px 15px; /* Padding interno dos campos */
+  padding: 12px 15px;
   font-size: 1rem;
   border-radius: 5px;
-  border: 1px solid #ced4da; /* Borda mais clara */
-  margin-bottom: 20px; /* Espaçamento inferior */
+  border: 1px solid #ced4da;
+  margin-bottom: 20px;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -210,20 +242,20 @@ nav {
 
 .form-textarea {
   height: 150px;
-  resize: vertical; /* Permite redimensionamento vertical */
+  resize: vertical;
 }
 
 .form-btn {
   padding: 12px 25px;
   background-color: #2cc76a;
   color: #fff;
-  font-size: 1.1rem; /* Aumentado um pouco */
+  font-size: 1.1rem;
   font-weight: 500;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  display: inline-block; /* Para que o botão não ocupe 100% da largura por padrão */
+  display: inline-block;
 }
 
 .form-btn:hover {
@@ -245,7 +277,7 @@ nav {
 }
 
 .searchdomain-container p {
-  color: #e9ecef; /* Clareado um pouco */
+  color: #e9ecef;
   font-size: 1.25rem;
   margin-bottom: 30px;
 }
@@ -258,7 +290,7 @@ nav {
 /* contact form section specifics */
 .contact-container {
   text-align: center;
-  padding: 5rem 2rem 3rem 2rem; /* Ajustado padding inferior */
+  padding: 5rem 2rem 3rem 2rem;
 }
 
 .contact-container h2 {
@@ -272,38 +304,35 @@ nav {
 }
 
 .contact-container form {
-  max-width: 600px; /* Aumentado um pouco a largura do form de contato */
+  max-width: 600px;
   margin: 0 auto;
 }
 
 /* footer */
 footer {
   text-align: center;
-  font-weight: normal; /* Peso normal para o texto do rodapé */
-  color: #6c757d; /* Cor mais suave */
-  padding: 2rem 0; /* Aumentado padding */
-  margin-top: 3rem; /* Espaço acima do rodapé */
-  border-top: 1px solid #e9ecef; /* Linha divisória sutil */
+  font-weight: normal;
+  color: #6c757d;
+  padding: 2rem 0;
+  margin-top: 3rem;
+  border-top: 1px solid #e9ecef;
 }
 
 /* responsividade */
-/* ... (mantendo as media queries anteriores, mas ajustando os valores com base nas novas classes e estilos) ... */
 
 @media (max-width: 1100px) {
   .services-container ul {
     width: 95%;
   }
   nav {
-    /* Para garantir que a navbar se ajuste bem */
     padding-left: 1rem;
     padding-right: 1rem;
   }
 }
 
 @media (max-width: 900px) {
-  /* .main-banner h1 foi removido */
   .main-banner {
-    min-height: calc(70vh - 80px); /* Altura menor em tablets */
+    min-height: calc(70vh - 80px);
     padding: 10rem 0;
   }
 
@@ -316,13 +345,8 @@ footer {
 }
 
 @media (max-width: 768px) {
-  /* Adicionando um breakpoint intermediário */
-  .navbar-items {
-    /* Aqui seria um bom lugar para começar a pensar em um menu hambúrguer. */
-    /* Por enquanto, vamos apenas reduzir o espaçamento se necessário ou ocultar alguns itens. */
-  }
   .navbar-items li {
-    margin-left: 15px; /* Reduz espaçamento */
+    margin-left: 15px;
     font-size: 0.9rem;
   }
   .default-btn {
@@ -340,16 +364,11 @@ footer {
     padding: 0 1rem;
   }
   .navbar-items {
-    /* Em telas muito pequenas, os itens podem não caber */
-    /* Idealmente, um menu hambúrguer seria implementado aqui com JavaScript */
-    display: none; /* Solução temporária: esconde os itens para não quebrar o layout */
-    /* Se você quiser mantê-los, precisaria de um design de menu mobile */
+    display: none; /* Menu hambúrguer seria ideal aqui */
   }
-  /* .default-btn precisaria de um lugar se o menu estiver escondido */
 
-  /* .main-banner h1 foi removido */
   .main-banner {
-    min-height: calc(60vh - 80px); /* Altura menor em mobile */
+    min-height: calc(60vh - 80px);
     padding: 8rem 0;
   }
 
@@ -359,10 +378,11 @@ footer {
   .services-container ul {
     flex-direction: column;
     width: 100%;
-    gap: 20px; /* Gap entre os cards na vertical */
+    gap: 20px;
   }
-  .services-container li {
-    max-width: 100%; /* Card ocupa largura total */
+  .services-container > ul > li {
+    /* Alvo específico para os cards */
+    max-width: 100%;
   }
 
   .sustainability-container {
