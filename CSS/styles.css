@@ -90,8 +90,14 @@ nav {
 /* main banner */
 .main-banner {
   background-image: url("../img/teste1.png"); /* Confirmado teste1.png */
-  background-size: cover;
-  background-position: top center;
+  
+
+  background-size: contain;
+  background-repeat: no-repeat; /* Para garantir que a imagem não se repita se for menor que o container */
+  background-position: center center; /* Ajustado para centralizar melhor com 'contain' */
+  
+  background-color: #fff3e3;
+
   padding: 12rem 0;
   text-align: center;
   margin-top: 80px;
