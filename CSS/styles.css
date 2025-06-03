@@ -89,15 +89,19 @@ nav {
 
 /* main banner */
 .main-banner {
-  background-image: url("../img/teste1.png"); /* Confirmado teste1.png */
-  
+  /* Imagem principal (teste1.png) na FRENTE, imagem de preenchimento ATRÁS */
+  background-image: url("../img/teste1.png"), url("../img/teste1.1.png");
 
-  background-size: contain;
-  background-repeat: no-repeat; /* Para garantir que a imagem não se repita se for menor que o container */
-  background-position: center center; /* Ajustado para centralizar melhor com 'contain' */
-  
-  background-color: #fff3e3;
+  /* 'contain' para a imagem principal, 'cover' ou 'repeat' para a de preenchimento */
+  background-size: contain, cover; /* Ou 'contain, repeat' se a segunda for um padrão */
 
+  /* 'no-repeat' para a imagem principal. Para a de preenchimento, pode ser 'no-repeat' ou 'repeat' */
+  background-repeat: no-repeat, repeat; /* Ajuste o segundo 'no-repeat' conforme necessário */
+
+  /* Posição para ambas as imagens (geralmente centralizadas) */
+  background-position: center center, center center;
+
+  /* Outras propriedades do seu .main-banner */
   padding: 12rem 0;
   text-align: center;
   margin-top: 80px;
@@ -106,6 +110,9 @@ nav {
   justify-content: center;
   align-items: center;
   min-height: calc(80vh - 80px);
+  /* Se a imagem de fundo decorativo não cobrir tudo ou se a imagem principal não carregar,
+     ainda é bom ter uma cor de fallback */
+  /* background-color: #cor-de-fallback; */
 }
 
 /* services */
