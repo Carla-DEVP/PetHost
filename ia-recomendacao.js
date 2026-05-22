@@ -55,7 +55,7 @@ Responda EXATAMENTE neste formato JSON, sem nenhum texto fora do JSON:
         "Authorization": `Bearer ${GEMINI_API_KEY}`
       },
       body: JSON.stringify({
-        model: "openrouter/free",
+        model: "mistralai/mistral-7b-instruct:free",
         messages: [{ role: "user", content: prompt }]
       })
     });
@@ -91,14 +91,12 @@ Responda EXATAMENTE neste formato JSON, sem nenhum texto fora do JSON:
       return;
     }
 
-    // Busca as fotos do anfitrião recomendado no mock.json
     const anfRecomendado = dados.anfitrioes.find(
       a => a.nome.toLowerCase() === dados_ia.recomendado.nome.toLowerCase()
     );
     const fotos = anfRecomendado && anfRecomendado.fotos && anfRecomendado.fotos.length > 0
       ? anfRecomendado.fotos : [];
 
-    // Monta galeria de fotos se houver
     const galeriaHTML = fotos.length > 0 ? `
       <div class="ia-bloco ia-bloco-fotos">
         <div class="ia-bloco-titulo">Fotos do local</div>
@@ -111,7 +109,6 @@ Responda EXATAMENTE neste formato JSON, sem nenhum texto fora do JSON:
         </div>
       </div>` : "";
 
-    // Monta barras de pontuação
     const barras = dados_ia.pontuacoes.map(p => {
       const pct = Math.round((p.nota / 10) * 100);
       return `
