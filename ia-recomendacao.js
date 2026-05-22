@@ -1,4 +1,4 @@
-const GEMINI_API_KEY = "SUA_CHAVE_OPENROUTER_AQUI"; // ← substitua pela sua chave
+const GEMINI_API_KEY = CONFIG.OPENROUTER_API_KEY;
 const GEMINI_URL = "https://openrouter.ai/api/v1/chat/completions";
 
 async function buscarRecomendacaoIA() {
