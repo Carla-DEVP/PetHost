@@ -1,0 +1,64 @@
+{
+  "tutor": {
+    "nome": "Ana Lima",
+    "bairro": "Manaíra",
+    "cidade": "João Pessoa",
+    "pet": {
+      "nome": "Thor",
+      "tipo": "Cachorro",
+      "porte": "Médio",
+      "raca": "Labrador"
+    },
+    "necessidade": "Hospedagem de 5 dias, pet dócil, precisa de espaço para correr"
+  },
+  "anfitrioes": [
+    {
+      "id": 1,
+      "nome": "Carlos Souza",
+      "bairro": "Tambaú",
+      "cidade": "João Pessoa",
+      "pet_proprio": { "tipo": "Cachorro", "porte": "Grande" },
+      "avaliacoes": [
+        "Excelente anfitrião, muito cuidadoso e atencioso com os pets.",
+        "Meu cachorro ficou muito bem, voltou feliz e bem tratado.",
+        "Recomendo! Casa espaçosa e com quintal grande."
+      ],
+      "media_estrelas": 4.8,
+      "total_hospedagens": 12,
+      "fotos": []
+    },
+    {
+      "id": 2,
+      "nome": "Fernanda Costa",
+      "bairro": "Cabo Branco",
+      "cidade": "João Pessoa",
+      "pet_proprio": { "tipo": "Cachorro", "porte": "Pequeno" },
+      "avaliacoes": [
+        "Boa anfitriã, mas apartamento pequeno para cães grandes.",
+        "Atenciosa, porém sem espaço para o pet se movimentar.",
+        "Pet voltou bem, mas um pouco agitado."
+      ],
+      "media_estrelas": 3.9,
+      "total_hospedagens": 5,
+      "fotos": [
+        { "src": "./img/sala.png",   "legenda": "Sala principal — ambiente tranquilo e aconchegante" },
+        { "src": "./img/quarto.png", "legenda": "Quarto pet-friendly — espaço dedicado ao seu pet" }
+      ]
+    },
+    {
+      "id": 3,
+      "nome": "Roberto Alves",
+      "bairro": "Bessa",
+      "cidade": "João Pessoa",
+      "pet_proprio": { "tipo": "Cachorro", "porte": "Médio" },
+      "avaliacoes": [
+        "Ótimo! Tem casa com quintal e ama animais.",
+        "Roberto é muito responsável, pet ficou super bem cuidado.",
+        "Vai de novo! Melhor anfitrião que já tive na plataforma."
+      ],
+      "media_estrelas": 4.9,
+      "total_hospedagens": 20,
+      "fotos": []
+    }
+  ]
+}
