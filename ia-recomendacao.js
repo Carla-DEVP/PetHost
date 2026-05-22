@@ -1,4 +1,4 @@
-const GEMINI_API_KEY = "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";
+const GEMINI_API_KEY = "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";
 const GEMINI_URL = "https://openrouter.ai/api/v1/chat/completions";
 
 async function buscarRecomendacaoIA() {
